@@ -1,6 +1,7 @@
 {
   "name": "router_sw",
   "private": true,
+  "homepage": "https://hellogalina.github.io/routerReact/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
