@@ -1,7 +1,10 @@
 {
   "name": "router_sw",
   "private": true,
-  "homepage": "https://hellogalina.github.io/routerReact/",
+  "homepage": "https://helloGalina.github.io/routerReact",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
