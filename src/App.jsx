@@ -1,28 +1,61 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 import Basket from "./Pages/Basket";
 import Description from "./Pages/Description";
 import Main from "./Pages/Main";
+import CustomFeedbackForm from "./Pages/CustomFeedbackForm";
 
 export default function App() {
   return (
     <>
-      <div className="d-flex flex-row mb-3 gap-3 bg-dark text-light p-3 user-select-none">
-        <Link className="text-light text-decoration-none" to="/">
+      <nav className="d-flex flex-row mb-3 gap-3 bg-dark text-light p-3 user-select-none">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-warning text-decoration-none"
+              : "text-light text-decoration-none"
+          }
+        >
           Главная
-        </Link>
-        <Link className="text-light text-decoration-none" to="/about">
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-warning text-decoration-none"
+              : "text-light text-decoration-none"
+          }
+        >
           О нас
-        </Link>
-        <Link className="text-light text-decoration-none" to="/basket">
+        </NavLink>
+        <NavLink
+          to="/basket"
+          className={({ isActive }) =>
+            isActive
+              ? "text-warning text-decoration-none"
+              : "text-light text-decoration-none"
+          }
+        >
           Корзина
-        </Link>
-      </div>
+        </NavLink>
+        <NavLink
+          to="/feedback"
+          className={({ isActive }) =>
+            isActive
+              ? "text-warning text-decoration-none"
+              : "text-light text-decoration-none"
+          }
+        >
+          Обратная связь
+        </NavLink>
+      </nav>
 
-      <div className="m-3">
+      <div className="container">
         <Routes>
-          <Route path="/" element={<Main></Main>}></Route>
-          <Route path="/basket" element={<Basket></Basket>}></Route>
-          <Route path="/about" element={<Description></Description>}></Route>
+          <Route path="/" element={<Main />} />
+          <Route path="/basket" element={<Basket />} />
+          <Route path="/about" element={<Description />} />
+          <Route path="/feedback" element={<CustomFeedbackForm />} />
         </Routes>
       </div>
     </>
