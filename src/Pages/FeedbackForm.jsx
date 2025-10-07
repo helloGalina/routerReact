@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import * as motion from "motion/react-client";
 
 export default function FeedbackForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -97,9 +98,14 @@ export default function FeedbackForm() {
         </div>
 
         <div className="mb-3 text-center">
-          <button className="btn btn-outline-primary" type="submit">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn btn-outline-primary"
+            type="submit"
+          >
             Отправить
-          </button>
+          </motion.button>
         </div>
       </form>
     </>
